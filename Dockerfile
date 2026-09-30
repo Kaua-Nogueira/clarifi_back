@@ -6,7 +6,7 @@ ENV APP_ENV=production \
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends libicu-dev libpq-dev libzip-dev unzip \
-    && docker-php-ext-install -j"$(nproc)" intl opcache pdo_pgsql \
+    && docker-php-ext-install -j"$(nproc)" intl opcache pdo_mysql pdo_pgsql \
     && a2enmod rewrite headers \
     && rm -rf /var/lib/apt/lists/*
 
